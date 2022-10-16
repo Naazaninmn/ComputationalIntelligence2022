@@ -1,5 +1,5 @@
 # ComputationalIntelligence2022
-Lab1\
+Lab1
 - For N = 5: number of elements = 6, number of nodes = 3
 - For N = 10: number of elements = 11, number of nodes = 3
 - For N = 20: number of elements = 29, number of nodes = 4
