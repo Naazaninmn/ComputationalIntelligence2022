@@ -85,8 +85,6 @@ def search(N, lists, parent_state: dict, state_cost: dict, priority_function: Ca
             elif new in frontier and state_cost[new] > state_cost[state] + cost:
                 parent_state[new] = state
                 state_cost[new] = state_cost[state] + cost
-            if goal_test(N, newState):
-                break
         
         if frontier:
             state = frontier.pop()
