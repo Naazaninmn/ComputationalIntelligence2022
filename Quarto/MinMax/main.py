@@ -74,7 +74,6 @@ class MinMaxPlayer(Player):
         return p
 
     def minmaxPlace(self, quarto: Quarto, depth, isMaximizing, alpha, beta):
-        #evaluations = []
         if isMaximizing:
             bestVal = float('-inf')
             bestX = -1
