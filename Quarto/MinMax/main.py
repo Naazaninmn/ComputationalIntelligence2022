@@ -29,7 +29,6 @@ class MinMaxPlayer(Player):
         self.__quarto = quarto
 
     def minmaxChoose(self, quarto: Quarto, depth, isMaximizing, alpha, beta):
-        #evaluations = []
         if isMaximizing:
             bestVal = float('-inf')
             bestP = -1
@@ -41,7 +40,6 @@ class MinMaxPlayer(Player):
                 if tmp.select(p):
                     steps += 1
                     x, y, val = self.minmaxPlace(tmp, depth+1, False, alpha, beta)
-                    #evaluations.append((p, -val))
                     if val > bestVal:
                         bestVal = val
                         bestP = p
