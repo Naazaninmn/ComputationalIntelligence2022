@@ -85,7 +85,7 @@ class HillClimberPlayer(Player):
                                       random.randint(0, 1))
                 
         useless_steps = 0
-        while useless_steps < 7:
+        while useless_steps < 5:
             useless_steps += 1
             candidate_piece_index = tweakChoose(current_piece)
             e1, n1 = evaluateChoose(current_piece_index)
@@ -301,7 +301,7 @@ class HillClimberPlayer(Player):
         current_x = random.randint(0, 3)
         current_y = random.randint(0, 3)
         useless_steps = 0
-        while useless_steps < 7:
+        while useless_steps < 5:
             useless_steps += 1
             candidate_x, candidate_y = tweakPlace(current_x, current_y)
             e1, _, _, _, _ = self.evaluatePlace(current_x, current_y)
@@ -315,7 +315,7 @@ class HillClimberPlayer(Player):
 
 def main():
     win = 0
-    for i in range(1000):
+    for i in range(100):
         game = Quarto()
         game.set_players((HillClimberPlayer(game), RandomPlayer(game)))
         winner = game.run()
@@ -325,12 +325,12 @@ def main():
     logging.warning(f"HillClimberPlayer won {win} games as the first player")
 
     win = 0
-    for i in range(1000):
+    for i in range(100):
         game = Quarto()
-        game.set_players((HillClimberPlayer(game), RandomPlayer(game)))
+        game.set_players((RandomPlayer(game), HillClimberPlayer(game)))
         winner = game.run()
         logging.warning(f"main: Winner: player {winner}")
-        if winner == 0:
+        if winner == 1:
             win += 1
     logging.warning(f"HillClimberPlayer won {win} games as the second player")
 
